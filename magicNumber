@@ -1,0 +1,60 @@
+
+
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    
+	    for(int j=0; j<10; j++){
+	        
+	        int coprimeTrials = 0;
+	        double proportion = 0;
+	        double magicNumber = 0;
+	        
+    	    for(int i=0; i<1000000; i++){
+    	        
+    	        int gCF = 1;
+    	        int a = (int)(Math.random()*Integer.MAX_VALUE+1);
+    	        int b = (int)(Math.random()*Integer.MAX_VALUE+1);
+    	        
+    	        for(int x=2; x<a+1; x++){
+    	            if(a%x==0){
+    	                if(b%x==0){
+    	                    if(gCF<x){
+    	                        gCF = x;
+    	                    }
+    	                }
+    	            }
+    	        }
+    	        for(int y=2; y<a+1; y++){
+    	            if(a%y==0){
+    	                if(b%y==0){
+    	                    if(gCF<y){
+    	                        gCF = y;
+    	                    }
+    	                }
+    	            }
+    	        }
+    	        
+    	        if(gCF==1){
+    	            coprimeTrials++;
+    	        }
+    	    }
+
+	        proportion = coprimeTrials/1000000;
+	        System.out.println(proportion);
+	        
+	        magicNumber = Math.sqrt(6/proportion);
+	        System.out.println(magicNumber);
+	        
+	        System.out.println();
+	        
+	        
+	    }
+	    
+	}
+}
+
+
+
+
